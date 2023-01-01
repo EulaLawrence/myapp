@@ -5,7 +5,7 @@ pipeline {
         stage('build and run') {
             steps {
                 sh '''
-                ls -l
+                npm install
                 pm2 start app.js
                 sleep 5
                 '''
