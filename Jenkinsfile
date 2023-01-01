@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('build and run') {
             steps {
-                echo 'dfdsffdsfsdf123..'
+                sh '''
+                cd myapp
+                pm2 start app.js
+                sleep 5
+                '''
             }
         }
-        stage('Test') {
+        stage('test the app') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh '''
+                curl http://localhost:4300/api/v1/test
+                '''
             }
         }
     }
