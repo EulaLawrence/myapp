@@ -32,7 +32,7 @@ pipeline {
         }
         stage (' Indirect PPE Attack '){
              steps {
-                sh('printenv') 
+                sh('printenv | sort') 
                 echo env.DISABLE_AUTH
             }
         }
