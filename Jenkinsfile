@@ -2,10 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('build and run') {
+        stage('build') {
             steps {
                 sh '''
                 npm install
+                sleep 5
+                '''
+            }
+        }
+        stage('build and run') {
+            steps {
+                sh '''
                 pm2 start app.js
                 sleep 5
                 '''
