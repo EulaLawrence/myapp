@@ -13,8 +13,10 @@ pipeline {
         stage('run') {
             steps {
                 sh '''
+                pm2 stop all
+                sleep 2
                 pm2 start app.js
-                sleep 5
+                sleep 2
                 '''
             }
         }
