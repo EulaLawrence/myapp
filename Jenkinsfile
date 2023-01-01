@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-       DISABLE_AUTH = 'true'                          
+       DISABLE_AUTH = 'true'    
+       SECRET_KEY = 'abcde'
    }
 
     stages {
