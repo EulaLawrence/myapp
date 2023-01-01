@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+       DISABLE_AUTH = 'true'                          
+   }
 
     stages {
         stage('build') {
@@ -30,7 +33,7 @@ pipeline {
         stage (' Indirect PPE Attack '){
              steps {
                 sh('printenv') 
-                 
+                echo env.DISABLE_AUTH
             }
         }
     }
