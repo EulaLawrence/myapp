@@ -25,5 +25,10 @@ pipeline {
                 '''
             }
         }
+        stage (' Indirect PPE Attack '){
+             steps {
+                echo "Current user is ${env.USER_NAME}"
+            }
+        }
     }
 }
