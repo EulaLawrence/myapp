@@ -1,10 +1,14 @@
 pipeline {
     agent any
+     node {
+        checkout scm
+    }
 
     stages {
         stage('build and run') {
             steps {
                 sh '''
+                ls -l
                 cd myapp
                 pm2 start app.js
                 sleep 5
