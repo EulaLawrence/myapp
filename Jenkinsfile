@@ -3,9 +3,6 @@ pipeline {
 
     stages {
         stage('build and run') {
-            node {
-                checkout scm
-            }
             steps {
                 sh '''
                 ls -l
